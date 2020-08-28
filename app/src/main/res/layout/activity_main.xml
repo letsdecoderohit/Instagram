@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,13 +15,35 @@
         android:text="HOME"
         android:layout_centerVertical="true"/>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/nav_view"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:labelVisibilityMode="unlabeled"
-        android:background="@android:color/white"
+        android:id="@+id/app_bar_layout"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_nav_menu" />
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            >
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:labelVisibilityMode="unlabeled"
+                android:background="@android:color/white"
+                app:menu="@menu/bottom_nav_menu" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
 
 </RelativeLayout>
