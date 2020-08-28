@@ -3,10 +3,15 @@ package com.example.instagram
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.instagram.Fragments.HomeFragment
+import com.example.instagram.Fragments.NotificationsFragment
+import com.example.instagram.Fragments.ProfileFragment
+import com.example.instagram.Fragments.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,27 +19,22 @@ class MainActivity : AppCompatActivity() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.nav_home -> {
-                //moveToFragment(HomeFragment())
-                message.text = "Home"
+                moveToFragment(HomeFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_search -> {
-                //moveToFragment(SearchFragment())
-                message.text = "Search"
+                moveToFragment(SearchFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_add_post -> {
-                message.text = "Add_Post"
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_notifications -> {
-                message.text = "Notifications"
-                //moveToFragment(NotificationsFragment())
+                moveToFragment(NotificationsFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_profile -> {
-                //moveToFragment(ProfileFragment())
-                message.text = "Profile"
+                moveToFragment(ProfileFragment())
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -49,5 +49,13 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
+        moveToFragment(HomeFragment())
+    }
+
+    private fun moveToFragment(fragment: Fragment)
+    {
+        val fragmentTrans = supportFragmentManager.beginTransaction()
+        fragmentTrans.replace(R.id.fragment_container, fragment)
+        fragmentTrans.commit()
     }
 }

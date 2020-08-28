@@ -19,6 +19,26 @@
             android:background="@android:color/white"
             >
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/instagram"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:src="@drawable/send_icon"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
