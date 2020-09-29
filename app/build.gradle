@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -12,6 +13,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
@@ -44,10 +46,39 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-database:19.4.0'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+
+    implementation "com.google.firebase:firebase-core:17.5.0"
+    implementation "com.google.firebase:firebase-appindexing:19.1.0"
+    implementation "com.google.firebase:firebase-auth:19.3.2"
+    implementation "com.google.firebase:firebase-messaging:20.2.4"
+    implementation "com.google.firebase:firebase-storage:19.2.0"
+
+    //FIRESTORE
+    implementation "com.google.firebase:firebase-firestore:21.6.0"
+    implementation 'com.firebaseui:firebase-ui-firestore:5.0.0'
+
+    //IN-APP MESSAGING & DYNAMIC LINKS
+    implementation 'com.google.firebase:firebase-inappmessaging-display:19.1.1'
+    implementation 'com.google.firebase:firebase-dynamic-links:19.1.0'
+
+    //FIREBASE PERFORMANCE
+    implementation 'com.google.firebase:firebase-perf:19.0.8'
+
+    //FIREBASE REMOTE CONFIG
+    implementation 'com.google.firebase:firebase-config:19.2.0'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 }
